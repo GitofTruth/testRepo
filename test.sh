@@ -3,17 +3,23 @@ mkdir testDirectory
 cd testDirectory
 
 git clone https://github.com/GitofTruth/testRepo
-mv testRepo RepoOne
+mv testRepo repoOne
 
 git clone https://github.com/GitofTruth/testRepo
-mv testRepo RepoTwo
+mv testRepo repoTwo
 
 mkdir Storage
 
-cd RepoOne
-init-got.sh
+echo ""
+echo ""
+echo "Starting the initialization procedure of repoOne"
+cd repoOne
+$GOPATH/src/github.com/GitofTruth/GoT/hooks/init-got.sh
 cd ..
 
-cd RepoTwo
-init-got.sh
+echo ""
+echo ""
+echo "Starting the initialization procedure of repoTwo"
+cd repoTwo
+$GOPATH/src/github.com/GitofTruth/GoT/hooks/init-got.sh
 cd ..
